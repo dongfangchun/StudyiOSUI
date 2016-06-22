@@ -12,6 +12,9 @@
 #import "ViewControllerPage1.h"
 #import "Header.h"
 
+#define MENU_WIDTH (ScreenWidth * 2 / 3)
+#define SLIDE_VELOCITY 200.f
+
 @interface XXTabBarController ()
 
 @property(nonatomic, strong) CustomNavViewController *nav1;
@@ -23,7 +26,10 @@
 @property(nonatomic, assign) CGPoint panLocationEnd;
 @property(nonatomic, assign) NSInteger panStatus;//0 表示在左边正常情况  1表示在2/3出，slide的状态
 @property(nonatomic, strong) UIButton *btnBackground;
+
 @property(nonatomic, strong) UIView *menuView;
+
+
 @end
 
 @implementation XXTabBarController
@@ -34,23 +40,12 @@
     [self initViewControllers];
     self.selectedIndex = 0;
     
-    [self menuView];
+//    [self menuView];
     //滑动
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self
                                                                          action:@selector(handlePan:)];
     [self.view addGestureRecognizer:pan];
     
-
-    //轻触
-    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self
-                                                                          action:@selector(handleTap1:)];
-    tap1.numberOfTapsRequired = 1;
-    [self.menuView addGestureRecognizer:tap1];
-}
-
-//Gesture
-- (void)handleTap1:(UITapGestureRecognizer *)tapSender{
-    NSLog(@"ddd");
 }
 
 -(void)handlePan:(UIPanGestureRecognizer *)panSender{
@@ -72,39 +67,47 @@
 
         if(fabs(delta_X) > fabs(delta_Y * 3)){
             CGRect frame = CGRectMake(self.view.frame.origin.x + delta_X, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+            CGRect menuFrame = CGRectMake(self.menuView.frame.origin.x + delta_X, self.menuView.frame.origin.y, self.menuView.frame.size.width, self.menuView.frame.size.height);
 
-            if(frame.origin.x > ScreenWidth * 2 / 3 || frame.origin.x < CGFLOAT_MIN){
+            if(frame.origin.x > MENU_WIDTH || frame.origin.x < CGFLOAT_MIN){
                 return;
             }
             [self.view setFrame:frame];
+            [self.menuView setFrame:menuFrame];
         }
         self.panLocationLast = self.panLocationCurrent;
     }
     else if(panSender.state == UIGestureRecognizerStateEnded){
         
         CGRect frame = self.view.frame;
+        CGRect menuFrame = self.menuView.frame;
 
         if(self.panStatus == 0){
-            if(self.view.frame.origin.x < 10.0f){
-                frame.origin.x = 0;
+            if(vel.x > SLIDE_VELOCITY || self.view.frame.origin.x > MENU_WIDTH / 2){
+                frame.origin.x = ScreenWidth * 2 / 3;
+                menuFrame.origin.x = 0;
+                self.panStatus = 1;
             }
             else{
-                frame.origin.x = ScreenWidth * 2 / 3;
-                self.panStatus = 1;
+                frame.origin.x = 0;
+                menuFrame.origin.x = -MENU_WIDTH;
             }
         }
         else{
-            if(self.view.frame.origin.x > ScreenWidth * 2 / 3 - 10.0f){
-                frame.origin.x = ScreenWidth * 2 / 3;
+            if(vel.x < -SLIDE_VELOCITY || self.view.frame.origin.x < MENU_WIDTH / 2){
+                frame.origin.x = 0;
+                menuFrame.origin.x = -MENU_WIDTH;
+                self.panStatus = 0;
             }
             else{
-                frame.origin.x = 0;
-                self.panStatus = 0;
+                frame.origin.x = MENU_WIDTH;
+                menuFrame.origin.x = 0;
             }
         }
 
         [UIView animateWithDuration:0.1f animations:^{
             self.view.frame = frame;
+            self.menuView.frame = menuFrame;
             if(self.panStatus){
                 [self.viewBackground setHidden:NO];
             }
@@ -168,7 +171,7 @@
 - (void)ClickBackView:(id)sender{
     [UIView animateWithDuration:0.1f animations:^{
         self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-        self.menuView.frame = CGRectMake(-ScreenWidth * 2 / 3, 0, ScreenWidth * 2 / 3,ScreenHeight);
+        self.menuView.frame = CGRectMake(-MENU_WIDTH, 0, MENU_WIDTH,ScreenHeight);
         [self.btnBackground setHidden:YES];
         self.panStatus = 0;
     }];
@@ -190,17 +193,43 @@
     return _btnBackground;
 }
 
-
-- (UIView *)menuView{
+- (UIView *)createMenuView{
     if(!_menuView){
-        _menuView = [[UIView alloc]initWithFrame:CGRectMake(-ScreenWidth * 2 / 3, 0, ScreenWidth * 2 / 3,ScreenHeight)];
-        [_menuView setBackgroundColor:[UIColor blueColor]];
-        [self.view addSubview:_menuView];
+        _menuView = [[UIView alloc]initWithFrame:CGRectMake(-MENU_WIDTH, 0,MENU_WIDTH,ScreenHeight)];
+        [_menuView setBackgroundColor:[UIColor grayColor]];
+        
+        UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(1, 50, MENU_WIDTH - 2, 40)];
+        [btn1 setBackgroundColor:[UIColor blueColor]];
+        [btn1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn1 setTitle:@"Button1" forState:UIControlStateNormal];
+        [btn1 addTarget:self action:@selector(ClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+        [_menuView addSubview:btn1];
+        
+        UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(1, 92, MENU_WIDTH - 2, 40)];
+        [btn2 setBackgroundColor:[UIColor blueColor]];
+        [btn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn2 setTitle:@"Button2" forState:UIControlStateNormal];
+        [btn2 addTarget:self action:@selector(ClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+        [_menuView addSubview:btn2];
+        
+        UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(1, 134, MENU_WIDTH - 2, 40)];
+        [btn3 setBackgroundColor:[UIColor blueColor]];
+        [btn3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn3 setTitle:@"Button3" forState:UIControlStateNormal];
+        [btn3 addTarget:self action:@selector(ClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+        [_menuView addSubview:btn3];
+        
+        
+        
+        [self.keyWindow addSubview:_menuView];
     }
     return _menuView;
 }
 
-@end
+- (void)ClickMenuButton:(id)sender{
+    NSLog(@"Click %@",sender);
+}
 
+@end
 
 

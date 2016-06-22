@@ -14,5 +14,5 @@
 #define ScreenWidth         ScreenRect.size.width
 #define ScreenHeight        ScreenRect.size.height
 #define ScreenRect      [UIScreen mainScreen].bounds
-
+#define APPKeyWindow    [UIApplication sharedApplication].keyWindow
 #endif /* Header_h */

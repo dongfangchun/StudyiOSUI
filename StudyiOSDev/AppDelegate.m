@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "CustomViewController.h"
 #import "XXTabBarController.h"
+#import "Header.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +21,14 @@
     CGRect bounds = [[UIScreen mainScreen]bounds];
     self.window = [[UIWindow alloc] initWithFrame:bounds];
     
-    self.window.rootViewController = [[XXTabBarController alloc]init];
+    //tabBarController
+    XXTabBarController *xxTab = [[XXTabBarController alloc]init];
+    xxTab.keyWindow = self.window;
+    [xxTab createMenuView];
+    
+    self.window.rootViewController = xxTab;
     self.window.backgroundColor = [UIColor whiteColor];
+
     [self.window makeKeyAndVisible];
 
     return YES;

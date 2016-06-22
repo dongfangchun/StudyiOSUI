@@ -10,4 +10,11 @@
 
 @interface XXTabBarController : UITabBarController
 
+@property(nonatomic, strong) UIView *keyWindow;
+- (UIView *)createMenuView;
+
+
+//- (instancetype) initWithAppKeyWindow:(UIView *)keyWindow;
+
 @end
+
