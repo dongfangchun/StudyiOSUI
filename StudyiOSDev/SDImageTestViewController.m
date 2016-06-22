@@ -7,6 +7,7 @@
 //
 
 #import "SDImageTestViewController.h"
+#import "UIImageView+WebCache.h"
 
 @interface SDImageTestViewController ()
 
@@ -16,7 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [imageView.layer setBorderWidth:1.0f];
+    [imageView.layer setBorderColor:[[UIColor redColor]CGColor]];
+    [self.view addSubview:imageView];
+    [imageView sd_setImageWithURL:[NSURL URLWithString:@"http://publicschool-pic.stor.sinaapp.com/temp/Add_By_Edit.png"]
+                 placeholderImage:[UIImage imageNamed:@"niconiconi.gif"]
+                          options:SDWebImageRefreshCached];
 }
 
 - (void)didReceiveMemoryWarning {

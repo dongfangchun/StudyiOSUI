@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyTabBarController : UITabBarController
+@interface XXTabBarController : UITabBarController
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomViewController.h"
 
-@interface TestUIViewController : UIViewController
+@interface TestUIViewController : CustomViewController
 
 @end

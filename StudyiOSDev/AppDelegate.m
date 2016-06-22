@@ -7,16 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "CustomViewController.h"
+#import "XXTabBarController.h"
 
 @interface AppDelegate ()
 
 @end
-
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    CGRect bounds = [[UIScreen mainScreen]bounds];
+    self.window = [[UIWindow alloc] initWithFrame:bounds];
+    
+    self.window.rootViewController = [[XXTabBarController alloc]init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

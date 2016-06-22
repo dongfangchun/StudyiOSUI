@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XXSegmentView : UIView
+
+
+@interface XXSegmentView : UIScrollView
+
+- (instancetype)init NS_UNAVAILABLE;
+- (void)setTitles:(NSArray<NSString *> *) aArr;
+
 
 @end

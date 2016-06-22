@@ -7,8 +7,10 @@
 //
 
 #import "TTTLabelViewController.h"
+#import "TTTAttributedLabel.h"
+#import "UIView+Toast.h"
 
-@interface TTTLabelViewController ()
+@interface TTTLabelViewController ()<TTTAttributedLabelDelegate>
 
 @end
 
@@ -16,22 +18,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    TTTAttributedLabel *label = [[TTTAttributedLabel alloc]init];
+    label.frame = CGRectMake(30, 100, 200, 40);
+    label.attributedText = [[NSAttributedString alloc]initWithString:@"1234567890"];
+    label.delegate = self;
+    
+    [label addLinkToURL:[[NSURL alloc]initWithString:@"http://www.baidu.com"] withRange:NSMakeRange(0, 2)];
+    [label addLinkToURL:[[NSURL alloc]initWithString:@"http://www.sina.com"] withRange:NSMakeRange(5, 5)];
+    
+    [self.view addSubview:label];
+    
 }
+
+- (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url{
+    [self.view makeToast:url.absoluteString];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

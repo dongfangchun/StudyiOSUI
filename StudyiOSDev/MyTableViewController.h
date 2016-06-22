@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomViewController.h"
 
-@interface MyTableViewController : UIViewController
+@interface MyTableViewController : CustomViewController<UITableViewDelegate,UITableViewDataSource>
 
 @end

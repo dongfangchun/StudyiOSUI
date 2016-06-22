@@ -14,16 +14,33 @@
 
 @implementation TestUIViewController
 
+__weak NSObject *string_weak_ = nil;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    NSObject *string =  [[NSString  alloc]initWithFormat: @"leetcoode %d",333];
+    
+    string_weak_ = string;
+    
+    NSLog(@"Load : %@",string_weak_);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSLog(@"Will String : %@",string_weak_);
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"WillDid String : %@",string_weak_);
+}
+
++ (NSObject *)myAlloc{
+    NSObject *o =  [[NSObject alloc]init];
+    return o;
+}
 /*
 #pragma mark - Navigation
 

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CustomViewController : UIViewController
 
--(void)pushViewController:(ViewController *)viewController animated:(BOOL)animated;
+-(void)pushViewController:(CustomViewController *)vc animated:(BOOL)animated;
 
 @end

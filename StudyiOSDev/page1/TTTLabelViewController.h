@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomViewController.h"
 
-@interface TTTLabelViewController : UIViewController
+@interface TTTLabelViewController : CustomViewController
 
 @end

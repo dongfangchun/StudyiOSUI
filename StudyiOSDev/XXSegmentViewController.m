@@ -7,8 +7,11 @@
 //
 
 #import "XXSegmentViewController.h"
+#import "XXSegmentView.h"
 
 @interface XXSegmentViewController ()
+
+@property (nonatomic, strong) XXSegmentView *xxSegmentHeader;
 
 @end
 
@@ -16,22 +19,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    //XXSegmentView
+    XXSegmentView *seg = [[XXSegmentView alloc]initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 40)];
+    [seg setTitles:@[@"上海",@"北京",@"广州",@"武汉",@"南京",@"天津",@"杭州",@"苏州",@"无锡",@"嘉兴",@"荆门"]];
+    [self.view addSubview:seg];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    });
+    
+    //ScroolView
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (XXSegmentView *)xxSegmentHeader{
+    if(!_xxSegmentHeader){
+        
+    }
+    return _xxSegmentHeader;
 }
-*/
 
 @end

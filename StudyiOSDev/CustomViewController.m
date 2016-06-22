@@ -1,33 +1,34 @@
 //
-//  ViewController.m
+//  CustomViewController.m
 //  StudyiOSDev
 //
 //  Created by 孙春杰 on 16/4/8.
 //  Copyright © 2016年 孙春杰. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "CustomViewController.h"
 #import "MyTableViewController.h"
 
-@interface ViewController ()
+@interface CustomViewController ()
 
 @end
 
-@implementation ViewController
+@implementation CustomViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+#ifdef __IPHONE_7_0
+    
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
+#endif
 }
 
-/**
- *  pushViewController的封装
- *
- *  @param viewController 被push的ViewController
- *  @param animated       动画
- */
--(void)pushViewController:(ViewController *)viewController animated:(BOOL)animated{
-    viewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:animated];
+-(void)pushViewController:(CustomViewController *)vc animated:(BOOL)animated{
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:animated];
 }
 
 - (void)didReceiveMemoryWarning {

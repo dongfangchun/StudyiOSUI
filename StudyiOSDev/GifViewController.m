@@ -8,6 +8,8 @@
 
 #import "GifViewController.h"
 
+#import "YYKit.h"
+
 @interface GifViewController ()
 
 @end
@@ -16,22 +18,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    UIImage *image = [YYImage imageNamed:@"niconiconi.gif"];
+    UIImageView *imageView = [[YYAnimatedImageView alloc] initWithImage:image];
+    [imageView setFrame:CGRectMake(100, 100, 100, 100)];
+    [self.view addSubview:imageView];
+
+    UIImageView *imageView2 = [[UIImageView alloc]initWithFrame:CGRectMake(100, 230, 200, 200)];
+    [self.view addSubview:imageView2];
+
+    [imageView2 setImageWithURL:[NSURL URLWithString:@"https://s-media-cache-ak0.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg"]
+                    placeholder:nil
+                        options:YYWebImageOptionProgressiveBlur | YYWebImageOptionShowNetworkActivity | YYWebImageOptionSetImageWithFadeAnimation progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+                            
+    } transform:nil completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

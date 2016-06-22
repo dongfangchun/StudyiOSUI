@@ -10,4 +10,9 @@
 #define Header_h
 
 
+
+#define ScreenWidth         ScreenRect.size.width
+#define ScreenHeight        ScreenRect.size.height
+#define ScreenRect      [UIScreen mainScreen].bounds
+
 #endif /* Header_h */
