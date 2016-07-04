@@ -34,12 +34,13 @@
 		7EDDF4451D0ED5690000C874 /* GifViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDF4431D0ED5690000C874 /* GifViewController.m */; };
 		7EDDF4461D0ED5690000C874 /* GifViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EDDF4441D0ED5690000C874 /* GifViewController.xib */; };
 		7EDDF44D1D1007510000C874 /* SDImageTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDDF44C1D1007510000C874 /* SDImageTestViewController.m */; };
-		7EF4A9591D12AAB8004BC3D3 /* TestUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4A9571D12AAB8004BC3D3 /* TestUIViewController.m */; };
-		7EF4A95A1D12AAB8004BC3D3 /* TestUIViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF4A9581D12AAB8004BC3D3 /* TestUIViewController.xib */; };
+		7EEB8B741D2A47170007843C /* MyUICollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEB8B721D2A47170007843C /* MyUICollectionVC.m */; };
+		7EEB8B751D2A47170007843C /* MyUICollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EEB8B731D2A47170007843C /* MyUICollectionVC.xib */; };
 		7EF514E51D07E8C100494D17 /* TTTLabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF514E31D07E8C100494D17 /* TTTLabelViewController.m */; };
 		7EF514E61D07E8C100494D17 /* TTTLabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF514E41D07E8C100494D17 /* TTTLabelViewController.xib */; };
 		7EF514EB1D07F15C00494D17 /* MJRefreshTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF514E91D07F15C00494D17 /* MJRefreshTableViewController.m */; };
 		7EF514EC1D07F15C00494D17 /* MJRefreshTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EF514EA1D07F15C00494D17 /* MJRefreshTableViewController.xib */; };
+		7EFB94DA1D211781004A00D3 /* NSString+XX.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB94D91D211781004A00D3 /* NSString+XX.m */; };
 		88BBF556D2B18435C589750D /* libPods-StudyiOSDev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECCD2EEF555B64BF6E69159 /* libPods-StudyiOSDev.a */; };
 /* End PBXBuildFile section */
 
@@ -109,9 +110,9 @@
 		7EDDF4441D0ED5690000C874 /* GifViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GifViewController.xib; sourceTree = "<group>"; };
 		7EDDF44B1D1007510000C874 /* SDImageTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageTestViewController.h; sourceTree = "<group>"; };
 		7EDDF44C1D1007510000C874 /* SDImageTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageTestViewController.m; sourceTree = "<group>"; };
-		7EF4A9561D12AAB8004BC3D3 /* TestUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUIViewController.h; sourceTree = "<group>"; };
-		7EF4A9571D12AAB8004BC3D3 /* TestUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIViewController.m; sourceTree = "<group>"; };
-		7EF4A9581D12AAB8004BC3D3 /* TestUIViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestUIViewController.xib; sourceTree = "<group>"; };
+		7EEB8B711D2A47170007843C /* MyUICollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyUICollectionVC.h; sourceTree = "<group>"; };
+		7EEB8B721D2A47170007843C /* MyUICollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyUICollectionVC.m; sourceTree = "<group>"; };
+		7EEB8B731D2A47170007843C /* MyUICollectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyUICollectionVC.xib; sourceTree = "<group>"; };
 		7EF4A9A61D17F0F4004BC3D3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		7EF514E21D07E8C100494D17 /* TTTLabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTLabelViewController.h; path = page1/TTTLabelViewController.h; sourceTree = "<group>"; };
 		7EF514E31D07E8C100494D17 /* TTTLabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTLabelViewController.m; path = page1/TTTLabelViewController.m; sourceTree = "<group>"; };
@@ -119,6 +120,8 @@
 		7EF514E81D07F15C00494D17 /* MJRefreshTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshTableViewController.h; sourceTree = "<group>"; };
 		7EF514E91D07F15C00494D17 /* MJRefreshTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshTableViewController.m; sourceTree = "<group>"; };
 		7EF514EA1D07F15C00494D17 /* MJRefreshTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJRefreshTableViewController.xib; sourceTree = "<group>"; };
+		7EFB94D81D211781004A00D3 /* NSString+XX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XX.h"; sourceTree = "<group>"; };
+		7EFB94D91D211781004A00D3 /* NSString+XX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XX.m"; sourceTree = "<group>"; };
 		BDA8389F590BDB51B629524D /* Pods-StudyiOSDev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyiOSDev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StudyiOSDev/Pods-StudyiOSDev.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,9 +196,7 @@
 				7EB5D0111CDB6038001B9B40 /* ViewControllerPage1.h */,
 				7EB5D0121CDB6038001B9B40 /* ViewControllerPage1.m */,
 				7EB5D0131CDB6038001B9B40 /* ViewControllerPage1.xib */,
-				7EF4A9561D12AAB8004BC3D3 /* TestUIViewController.h */,
-				7EF4A9571D12AAB8004BC3D3 /* TestUIViewController.m */,
-				7EF4A9581D12AAB8004BC3D3 /* TestUIViewController.xib */,
+				7EEB8B701D2A46F70007843C /* UICollectionView */,
 				7EDDF44A1D1007350000C874 /* SdWebImage */,
 				7EDDF43F1D0ED5390000C874 /* YYKit */,
 				7EDDF4361D0D49C30000C874 /* XXSegment */,
@@ -235,6 +236,8 @@
 				7EF4A9A61D17F0F4004BC3D3 /* Header.h */,
 				7ECB7D421CB40E8D002D4805 /* AppDelegate.h */,
 				7ECB7D431CB40E8D002D4805 /* AppDelegate.m */,
+				7EFB94D81D211781004A00D3 /* NSString+XX.h */,
+				7EFB94D91D211781004A00D3 /* NSString+XX.m */,
 				7E1C63C31CB892240081A96B /* XXTabBarController.h */,
 				7E1C63C41CB892240081A96B /* XXTabBarController.m */,
 				7E1C63B21CB7ACF40081A96B /* CustomNavViewController.h */,
@@ -307,6 +310,16 @@
 				7EDDF44C1D1007510000C874 /* SDImageTestViewController.m */,
 			);
 			name = SdWebImage;
+			sourceTree = "<group>";
+		};
+		7EEB8B701D2A46F70007843C /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7EEB8B711D2A47170007843C /* MyUICollectionVC.h */,
+				7EEB8B721D2A47170007843C /* MyUICollectionVC.m */,
+				7EEB8B731D2A47170007843C /* MyUICollectionVC.xib */,
+			);
+			name = UICollectionView;
 			sourceTree = "<group>";
 		};
 		7EF514E11D07E88600494D17 /* TTTLabel */ = {
@@ -456,12 +469,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EEB8B751D2A47170007843C /* MyUICollectionVC.xib in Resources */,
 				7EF514EC1D07F15C00494D17 /* MJRefreshTableViewController.xib in Resources */,
 				7EB5D0171CDB60C6001B9B40 /* 3.png in Resources */,
 				7E1C63BF1CB7B2CE0081A96B /* MyTableViewCell2.xib in Resources */,
 				7EB5D0151CDB6038001B9B40 /* ViewControllerPage1.xib in Resources */,
 				7EB5D00C1CDB5BCF001B9B40 /* BannerViewController.xib in Resources */,
-				7EF4A95A1D12AAB8004BC3D3 /* TestUIViewController.xib in Resources */,
 				7EDDF4411D0ED54D0000C874 /* niconiconi.gif in Resources */,
 				7ECB7D4F1CB40E8D002D4805 /* LaunchScreen.storyboard in Resources */,
 				7ECB7D4C1CB40E8D002D4805 /* Assets.xcassets in Resources */,
@@ -548,13 +561,14 @@
 				7E1C63B41CB7ACF40081A96B /* CustomNavViewController.m in Sources */,
 				7EDDF43A1D0D49FB0000C874 /* XXSegmentViewController.m in Sources */,
 				7E1C63C51CB892240081A96B /* XXTabBarController.m in Sources */,
+				7EFB94DA1D211781004A00D3 /* NSString+XX.m in Sources */,
 				7E1C63B01CB7AC360081A96B /* MyTableViewController.m in Sources */,
 				7E1C63B91CB7B2BF0081A96B /* MyTableViewCell1.m in Sources */,
 				7EF514E51D07E8C100494D17 /* TTTLabelViewController.m in Sources */,
 				7ECB7D441CB40E8D002D4805 /* AppDelegate.m in Sources */,
+				7EEB8B741D2A47170007843C /* MyUICollectionVC.m in Sources */,
 				7EB5D0141CDB6038001B9B40 /* ViewControllerPage1.m in Sources */,
 				7EB5D00B1CDB5BCF001B9B40 /* BannerViewController.m in Sources */,
-				7EF4A9591D12AAB8004BC3D3 /* TestUIViewController.m in Sources */,
 				7E2D0EEA1CB79B9800CFB001 /* CustomViewController.m in Sources */,
 				7EF514EB1D07F15C00494D17 /* MJRefreshTableViewController.m in Sources */,
 				7ECB7D411CB40E8D002D4805 /* main.m in Sources */,

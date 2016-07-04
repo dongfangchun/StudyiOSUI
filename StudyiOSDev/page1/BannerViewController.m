@@ -27,6 +27,9 @@
 }
 
 - (IBAction)clickTest:(id)sender {
+    
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"N1" object:nil];
+
 //    [self timerAction];
 }
 

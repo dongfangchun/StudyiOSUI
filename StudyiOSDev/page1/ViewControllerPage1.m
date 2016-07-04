@@ -16,7 +16,9 @@
 #import "XXSegmentViewController.h"
 #import "GifViewController.h"
 #import "SDImageTestViewController.h"
-#import "TestUIViewController.h"
+#import "CustomViewController.h"
+#import "MyUICollectionVC.h"
+#import <objc/runtime.h>
 
 @interface ViewControllerPage1 ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
@@ -31,11 +33,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     self.navigationItem.title = @"常用效果列表";
+    
 }
 
-
 - (IBAction)clickToBanner:(id)sender {
+
+    
 }
 
 - (IBAction)clickToTableView:(id)sender {
@@ -53,6 +58,8 @@
     if(!cell){
         cell = [[UITableViewCell alloc]init];
     }
+    NSLog(@"cell = %@",@(indexPath.row));
+
     if(indexPath.row == 0){
         cell.textLabel.text = @"滚动Banner";
     }
@@ -75,9 +82,15 @@
         cell.textLabel.text = @"SDWebImage";
     }
     else if(indexPath.row == 7){
-        cell.textLabel.text = @"测试";
+        cell.textLabel.text = @"UICollectionView";
     }
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%@",@(indexPath.row));
+    
+    return 40.f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -112,7 +125,7 @@
         [self pushViewController:vc animated:YES];
     }
     else if(indexPath.row == 7){
-        TestUIViewController *vc = [[TestUIViewController alloc]init];
+        MyUICollectionVC *vc = [[MyUICollectionVC alloc]init];
         [self pushViewController:vc  animated:YES];
     }
 }

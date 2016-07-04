@@ -40,7 +40,6 @@
     [self initViewControllers];
     self.selectedIndex = 0;
     
-//    [self menuView];
     //滑动
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self
                                                                          action:@selector(handlePan:)];
@@ -49,6 +48,13 @@
 }
 
 -(void)handlePan:(UIPanGestureRecognizer *)panSender{
+    
+    //只有最底部的VC才响应滑动菜单事件
+    CustomNavViewController *nav = (CustomNavViewController *)self.selectedViewController;
+    if (nav.viewControllers.count > 1) {
+        return;
+    }
+    
     __unused CGPoint loc = [panSender locationInView:panSender.view.superview];
     __unused CGPoint vel = [panSender velocityInView:panSender.view.superview];
     

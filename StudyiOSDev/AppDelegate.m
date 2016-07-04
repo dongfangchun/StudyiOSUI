@@ -10,9 +10,9 @@
 #import "CustomViewController.h"
 #import "XXTabBarController.h"
 #import "Header.h"
+#import "NSString+XX.h"
 
 @interface AppDelegate ()
-
 @end
 @implementation AppDelegate
 
@@ -32,6 +32,12 @@
     [self.window makeKeyAndVisible];
 
     return YES;
+}
+
+- (long long)getSysTick{
+    struct timeval tpstart;
+    gettimeofday(&tpstart, NULL);
+    return tpstart.tv_sec;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
