@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E1B5A8F1D38BE25007CFC1F /* MyAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B5A8D1D38BE25007CFC1F /* MyAudioViewController.m */; };
+		7E1B5A901D38BE25007CFC1F /* MyAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B5A8E1D38BE25007CFC1F /* MyAudioViewController.xib */; };
+		7E1B5A921D38BF2A007CFC1F /* beyond.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B5A911D38BF2A007CFC1F /* beyond.mp3 */; };
 		7E1C63B01CB7AC360081A96B /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C63AE1CB7AC360081A96B /* MyTableViewController.m */; };
 		7E1C63B11CB7AC360081A96B /* MyTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1C63AF1CB7AC360081A96B /* MyTableViewController.xib */; };
 		7E1C63B41CB7ACF40081A96B /* CustomNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1C63B31CB7ACF40081A96B /* CustomNavViewController.m */; };
@@ -63,6 +66,10 @@
 
 /* Begin PBXFileReference section */
 		15C71B0A3D8D5E1BAC88445E /* Pods-StudyiOSDev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudyiOSDev.release.xcconfig"; path = "Pods/Target Support Files/Pods-StudyiOSDev/Pods-StudyiOSDev.release.xcconfig"; sourceTree = "<group>"; };
+		7E1B5A8C1D38BE25007CFC1F /* MyAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAudioViewController.h; path = page1/MyAudioViewController.h; sourceTree = "<group>"; };
+		7E1B5A8D1D38BE25007CFC1F /* MyAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyAudioViewController.m; path = page1/MyAudioViewController.m; sourceTree = "<group>"; };
+		7E1B5A8E1D38BE25007CFC1F /* MyAudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyAudioViewController.xib; path = page1/MyAudioViewController.xib; sourceTree = "<group>"; };
+		7E1B5A911D38BF2A007CFC1F /* beyond.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beyond.mp3; sourceTree = "<group>"; };
 		7E1C63AD1CB7AC360081A96B /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
 		7E1C63AE1CB7AC360081A96B /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 		7E1C63AF1CB7AC360081A96B /* MyTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewController.xib; sourceTree = "<group>"; };
@@ -159,6 +166,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E1B5A8B1D38BE10007CFC1F /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				7E1B5A8C1D38BE25007CFC1F /* MyAudioViewController.h */,
+				7E1B5A911D38BF2A007CFC1F /* beyond.mp3 */,
+				7E1B5A8D1D38BE25007CFC1F /* MyAudioViewController.m */,
+				7E1B5A8E1D38BE25007CFC1F /* MyAudioViewController.xib */,
+			);
+			name = Audio;
+			sourceTree = "<group>";
+		};
 		7E1C63AC1CB7AC140081A96B /* Page2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +214,7 @@
 				7EB5D0111CDB6038001B9B40 /* ViewControllerPage1.h */,
 				7EB5D0121CDB6038001B9B40 /* ViewControllerPage1.m */,
 				7EB5D0131CDB6038001B9B40 /* ViewControllerPage1.xib */,
+				7E1B5A8B1D38BE10007CFC1F /* Audio */,
 				7EEB8B701D2A46F70007843C /* UICollectionView */,
 				7EDDF44A1D1007350000C874 /* SdWebImage */,
 				7EDDF43F1D0ED5390000C874 /* YYKit */,
@@ -469,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E1B5A901D38BE25007CFC1F /* MyAudioViewController.xib in Resources */,
 				7EEB8B751D2A47170007843C /* MyUICollectionVC.xib in Resources */,
 				7EF514EC1D07F15C00494D17 /* MJRefreshTableViewController.xib in Resources */,
 				7EB5D0171CDB60C6001B9B40 /* 3.png in Resources */,
@@ -477,6 +497,7 @@
 				7EB5D00C1CDB5BCF001B9B40 /* BannerViewController.xib in Resources */,
 				7EDDF4411D0ED54D0000C874 /* niconiconi.gif in Resources */,
 				7ECB7D4F1CB40E8D002D4805 /* LaunchScreen.storyboard in Resources */,
+				7E1B5A921D38BF2A007CFC1F /* beyond.mp3 in Resources */,
 				7ECB7D4C1CB40E8D002D4805 /* Assets.xcassets in Resources */,
 				7E1C63B11CB7AC360081A96B /* MyTableViewController.xib in Resources */,
 				7EF514E61D07E8C100494D17 /* TTTLabelViewController.xib in Resources */,
@@ -573,6 +594,7 @@
 				7EF514EB1D07F15C00494D17 /* MJRefreshTableViewController.m in Sources */,
 				7ECB7D411CB40E8D002D4805 /* main.m in Sources */,
 				7EDDF44D1D1007510000C874 /* SDImageTestViewController.m in Sources */,
+				7E1B5A8F1D38BE25007CFC1F /* MyAudioViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,8 @@
 #import "SDImageTestViewController.h"
 #import "CustomViewController.h"
 #import "MyUICollectionVC.h"
+#import "MyAudioViewController.h"
+
 #import <objc/runtime.h>
 
 @interface ViewControllerPage1 ()<UITableViewDelegate,UITableViewDataSource>
@@ -50,7 +52,7 @@
 
 #pragma mark - TableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 8;
+    return 9;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,6 +85,9 @@
     }
     else if(indexPath.row == 7){
         cell.textLabel.text = @"UICollectionView";
+    }
+    else if(indexPath.row == 8){
+        cell.textLabel.text = @"Audio";
     }
     return cell;
 }
@@ -127,6 +132,10 @@
     else if(indexPath.row == 7){
         MyUICollectionVC *vc = [[MyUICollectionVC alloc]init];
         [self pushViewController:vc  animated:YES];
+    }
+    else if(indexPath.row == 8){
+        MyAudioViewController *vc = [[MyAudioViewController alloc]init];
+        [self pushViewController:vc animated:YES];
     }
 }
 
